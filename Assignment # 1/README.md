@@ -1,0 +1,1 @@
+Identify the violation of SOLID principles in your any previous projects and fix at least 4 instances covering at least 2 principles either it would be 2-2 or 1-3 or 1-2-1 etc. Submit both old and new code files so that it can be compared.
