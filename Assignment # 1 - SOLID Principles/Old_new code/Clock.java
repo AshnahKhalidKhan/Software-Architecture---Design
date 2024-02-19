@@ -31,20 +31,20 @@ public class Clock
         return this.hours + ":" + this.minutes + " hours: " + this.hours + " minutes: " + this.minutes;
     }
     
-    public String 24HourFormat() 
+    public String _24HourFormat() 
     {
         return this.hours + ":" + this.minutes;
     }
     
-    public String 12HourFormat() 
+    public String _12HourFormat() 
     {
         if (this.hours < 13)
         {
-            return ((this.hours + 24) % 24)  + ":" + ((this.minutes + 60) % 60) + " AM";
+            return (this.hours % 12)  + ":" + (this.minutes % 60) + " AM";
         }
         else // if
         {
-            return ((this.hours + 24) % 24)  + ":" + ((this.minutes + 60) % 60) + " PM";
+            return (this.hours % 12)  + ":" + (this.minutes % 60) + " PM";
         }
     }
 }
