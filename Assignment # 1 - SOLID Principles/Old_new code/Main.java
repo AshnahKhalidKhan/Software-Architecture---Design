@@ -1,3 +1,11 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 public class Main
 {
 	public static void main(String[] args) 
@@ -32,6 +40,9 @@ public class Main
         Clock c10 = new Clock(1, -130);
         // hours: 22, minutes: 50
         
+        Clock c11 = new Clock(49, -190);
+        // hours: 21, minutes: 50
+        
         System.out.println(c1.toString().equals("1:20 hours: 1 minutes: 20"));
         System.out.println(c1 + "\n");
         
@@ -61,5 +72,8 @@ public class Main
         
         System.out.println(c10.toString().equals("22:50 hours: 22 minutes: 50"));
         System.out.println(c10 + "\n");
+        
+        System.out.println(c11.toString().equals("21:50 hours: 21 minutes: 50"));
+        System.out.println(c11 + "\n");
 	}
 }
