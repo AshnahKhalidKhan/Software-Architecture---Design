@@ -1,5 +1,3 @@
-package Old_new code;
-
 public class Clock
 {
     private int hours;
