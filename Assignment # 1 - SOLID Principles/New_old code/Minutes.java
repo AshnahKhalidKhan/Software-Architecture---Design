@@ -1,3 +1,7 @@
-public class Minutes {
-    
+public class Minutes extends TimeUnit
+{
+    public Minutes()
+    {
+        this.thresholdValue = 60;
+    }
 }
