@@ -2,6 +2,6 @@ public class Hours extends TimeUnit
 {
     public Hours()
     {
-        this.thresholdValue = 24;
+        this.thresholdTime = 24;
     }
 }

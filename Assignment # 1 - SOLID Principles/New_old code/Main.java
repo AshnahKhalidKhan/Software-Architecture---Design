@@ -2,7 +2,6 @@ public class Main
 {
 	public static void main(String[] args) 
 	{
-	        System.out.println("Hello World");
 		Hours h = new Hours();
 		h.setTime(26);
 		h.printTime();

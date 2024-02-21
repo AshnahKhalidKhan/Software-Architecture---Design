@@ -1,15 +1,25 @@
 public abstract class TimeUnit
 {
-    protected int thresholdValue;
-    private int value;
+    protected int thresholdTime;
+    private int time;
     
-    public void setTime(int value)
+    public void setTime(int time)
     {
-        this.value = (value % this.thresholdValue);
+        this.time = (time % this.thresholdTime);
     }
     
-    public void changeTimeBy(int changeInValue)
+    public void changeTimeBy(int changeInTime)
     {
-        setTime(this.value + changeInValue);
+        setTime(this.time + changeInTime);
+    }
+    
+    public void printTime()
+    {
+        System.out.println(this.time);
+    }
+    
+    public void printThreshold()
+    {
+        System.out.println(this.thresholdTime);
     }
 }
