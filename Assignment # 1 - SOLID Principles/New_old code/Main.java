@@ -16,7 +16,9 @@ public class Main
 		m.printTime();
 		m.printThreshold();
 		//
-		TimeDevice d = new Stopwatch();
+
+		
+		// TimeDevice d = new Stopwatch();
 // 		System.out.println(d.displayTime());
 	}
 }

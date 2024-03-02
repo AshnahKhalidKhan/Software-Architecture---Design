@@ -13,6 +13,11 @@ public abstract class TimeUnit
         setTime(this.time + changeInTime);
     }
     
+    public int changeInNextTimeUnit(int changeInTime)
+    {
+         return (this.time + changeInTime) / this.thresholdTime;
+    }
+    
     public String displayTime()
     {
         return this.getClass().getName() + ": " + this.time;

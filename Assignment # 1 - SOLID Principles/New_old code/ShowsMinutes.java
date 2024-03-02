@@ -1,5 +1,8 @@
 public interface ShowsMinutes 
 {
-    public void setMinutes();
-    public Hours setMinutes(Minutes minutes);
+    Minutes minutes = new Minutes();
+    
+    public void setMinutes(int minutes);
+    public void changeMinutes(int changeInMinutes);
+    // private Hours setMinutes(Minutes minutes);
 }

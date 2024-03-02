@@ -1,5 +1,8 @@
 public interface ShowsSeconds 
 {
-    public void setSeconds();
-    public Minutes setSeconds(Seconds seconds);
+    Seconds seconds = new Seconds();
+    
+    public void setSeconds(int seconds);
+    public void changeSeconds(int changeInSeconds);
+    // private Minutes setSeconds(Seconds seconds);
 }
