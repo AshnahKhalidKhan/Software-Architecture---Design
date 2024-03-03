@@ -23,19 +23,14 @@ public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsM
         setMinutes(minutes);
     }
     
-    // ml, s, min
-    // 5050, 70, 40
-    // 50, 70 + 5, 40
-    // 50, 15, 40 + 1
-    // 50, 15, 41
     public void setMilliseconds(int milliseconds)
     {
-        // changeSeconds(this.milliseconds.changeInNextTimeUnit(milliseconds));
         this.milliseconds.setTime(milliseconds);
     }
     
     public void changeMilliseconds(int changeInMilliseconds)
     {
+        // System.out.println(this.milliseconds.changeInNextTimeUnit(changeInMilliseconds));
         changeSeconds(this.milliseconds.changeInNextTimeUnit(changeInMilliseconds));
         this.milliseconds.changeTimeBy(changeInMilliseconds);
     }
@@ -59,6 +54,7 @@ public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsM
     
     public void changeMinutes(int changeInMinutes)
     {
+        this.seconds.changeTimeBy(this.seconds.changeInNextTimeUnit(changeInMinutes));
         this.minutes.changeTimeBy(changeInMinutes);
     }
     
