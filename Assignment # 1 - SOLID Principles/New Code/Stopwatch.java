@@ -1,56 +1,3 @@
-// // public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsMilliseconds
-// // {
-// //     private Minutes minutes;
-// //     private Seconds seconds;
-// //     private Milliseconds milliseconds;
-    
-// //     public Stopwatch()
-// //     {
-// //         minutes = new Minutes();
-// //         seconds = new Seconds();
-// //         milliseconds = new Milliseconds();
-// //     }
-    
-// //     public void setTime()
-// //     {
-// //         // u.setTime
-// //     }
-    
-    
-// //     public void setMinutes(int n)
-// //     {
-// //         minutes.setTime(n);
-// //     }
-// //     public Hours setMinutes(Minutes minutes)
-// //     {
-// //         return new Hours();
-// //     }
-    
-// //     public void setSeconds(){}
-// //     public Minutes setSeconds(Seconds seconds)
-// //     {
-// //         return new Minutes();
-// //     }
-    
-// //     public void setMilliseconds(){}
-// //     public Seconds setMilliseconds(Milliseconds milliseconds)
-// //     {
-// //         return new Seconds();
-// //     }
-    
-// //     // public String displayTime()
-// //     // {
-// //     //     return this.minutes.displayTime() + this.seconds.displayTime() + this.milliseconds.displayTime();
-// //     // }
-// // }
-
-
-// public class Stopwatch extends MinuteSecondsMillisecondsDevice
-// {
-    
-// }
-
-
 public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsMilliseconds
 {
     private Minutes minutes;
@@ -66,7 +13,9 @@ public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsM
     
     public void setTime(int minutes, int seconds, int milliseconds)
     {
-        this = new Stopwatch();
+        this.minutes = new Minutes();
+        this.seconds = new Seconds();
+        this.milliseconds = new Milliseconds();
         seconds = seconds + this.milliseconds.changeInNextTimeUnit(milliseconds);
         minutes = minutes + this.seconds.changeInNextTimeUnit(seconds);
         setMilliseconds(milliseconds);
@@ -113,8 +62,8 @@ public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsM
         this.minutes.changeTimeBy(changeInMinutes);
     }
     
-    // public String displayTime()
-    // {
-    //     return this.minutes.displayTime() + this.seconds.displayTime() + this.milliseconds.displayTime();
-    // }
+    public String displayTime()
+    {
+        return this.minutes.displayTime() + " " + this.seconds.displayTime() + " " + this.milliseconds.displayTime();
+    }
 }

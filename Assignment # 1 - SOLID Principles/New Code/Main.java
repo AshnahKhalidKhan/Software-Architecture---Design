@@ -18,7 +18,11 @@ public class Main
 		//
 
 		
-		// TimeDevice d = new Stopwatch();
-// 		System.out.println(d.displayTime());
+		Stopwatch s = new Stopwatch();
+		s.setTime(41, 70, 5000);
+		System.out.println(s.displayTime());
+		s.changeSeconds(-16);
+// 		s.changeMinutes(60-42);
+		System.out.println(s.displayTime());
 	}
 }
