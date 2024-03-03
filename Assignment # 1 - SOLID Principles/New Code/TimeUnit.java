@@ -19,14 +19,6 @@ public abstract class TimeUnit
     
     public int changeInNextTimeUnit(int changeInTime)
     {
-        //Agar negative number ho aur peechay he jaatay ja rahay ho to negative output do na...
-        /*
-            Check up 🙃
-            if (changeInTime < 0)
-            {
-                return - ((this.time + changeInTime) / this.thresholdTime)
-            }
-        */
         if (this.time + changeInTime < 0)
         {
             int unitTime = 0;
