@@ -99,7 +99,8 @@ public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsM
     
     public void changeSeconds(int changeInSeconds)
     {
-        
+        changeMinutes(this.seconds.changeInNextTimeUnit(changeInSeconds));
+        this.seconds.changeTimeBy(changeInSeconds);
     }
     
     public void setMinutes(int minutes)
@@ -109,7 +110,7 @@ public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsM
     
     public void changeMinutes(int changeInMinutes)
     {
-        
+        this.minutes.changeTimeBy(changeInMinutes);
     }
     
     // public String displayTime()
@@ -117,9 +118,3 @@ public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsM
     //     return this.minutes.displayTime() + this.seconds.displayTime() + this.milliseconds.displayTime();
     // }
 }
-
-
-// public class Stopwatch extends MinuteSecondsMillisecondsDevice
-// {
-    
-// }
