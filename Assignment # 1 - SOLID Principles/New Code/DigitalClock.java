@@ -1,4 +1,4 @@
-public class DigitalClock extends Clock
-{
+// public class DigitalClock extends Clock
+// {
     
-}
+// }

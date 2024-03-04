@@ -1,7 +1,7 @@
 public class Clock
 {
-    private int hours;
-    private int minutes;
+    public int hours;
+    protected int minutes;
     
     public Clock (int hours, int minutes)
     {
@@ -26,6 +26,10 @@ public class Clock
         this.hours = ((hours + 24) % 24);
     }
     
+    public Clock() {
+        //TODO Auto-generated constructor stub
+    }
+
     public String toString() 
     {
         return this.hours + ":" + this.minutes + " hours: " + this.hours + " minutes: " + this.minutes;

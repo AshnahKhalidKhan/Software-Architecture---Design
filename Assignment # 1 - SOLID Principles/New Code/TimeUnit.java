@@ -3,6 +3,11 @@ public abstract class TimeUnit
     protected int thresholdTime;
     private int time;
     
+    public int getTime()
+    {
+        return this.time;
+    }
+    
     public void setTime(int time)
     {
         this.time = ((time + this.thresholdTime) % this.thresholdTime);

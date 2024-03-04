@@ -1,19 +1,17 @@
-public class _24HourClock extends Clock
+public class _24HourClock extends Clock implements DisplayIn24HourFormat
 {
-    private TimeUnit[] times;
-    
-    public _24HourClock(TimeUnit[] times)
+    public _24HourClock()
     {
-        this.times = times;
+        super();
     }
-    
-    public void setTime()
-    {
-        //time ko set karo yaar
-    }
-    
+
     public String displayTime()
     {
-        return "String";
+        return displayIn24HourFormat();
+    }
+    
+    public String displayIn24HourFormat()
+    {
+        return super.hours.getTime() + ":" + this.minutes.getTime();
     }
 }
