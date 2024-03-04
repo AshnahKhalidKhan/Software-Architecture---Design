@@ -112,5 +112,16 @@ public class Main
         System.out.println(c12.displayTime());
         System.out.println(c12.displayIn12HourFormat());
         System.out.println("\n");
+		//
+		DigitalClock cd24 = new DigitalClock();
+        System.out.println(cd24.displayTime());
+        System.out.println(cd24.displayIn24HourFormat());
+        cd24.setTime(2, 3, 1, 2);
+        System.out.println(cd24.displayTime());
+        System.out.println(cd24.displayIn24HourFormat());
+        cd24.setTime(22, 3, 80, 9);
+        System.out.println(cd24.displayTime());
+        System.out.println(cd24.displayIn24HourFormat());
+        System.out.println("\n");
 	}
 }

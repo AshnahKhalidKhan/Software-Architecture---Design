@@ -7,7 +7,7 @@ public class _24HourClock extends Clock implements DisplayIn24HourFormat
 
     public String displayTime()
     {
-        return displayIn24HourFormat();
+        return super.hours.displayTime() + " " + super.minutes.displayTime();
     }
     
     public String displayIn24HourFormat()
