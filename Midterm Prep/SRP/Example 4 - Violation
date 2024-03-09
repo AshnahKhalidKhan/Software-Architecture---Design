@@ -1,0 +1,18 @@
+class Shape {
+  constructor() {
+    this.radius = 0;
+    this.width = 0;
+  }
+
+  setRadius(radius) {
+      this.radius = radius;
+  }
+  
+  setWidth(width) {
+      this.width = width;
+  }
+  
+  calculateArea() {
+  // Calculation logic for both circles and squares
+  }
+}
