@@ -2,12 +2,14 @@ public class DigitalClock extends Clock implements ShowsSeconds, ShowsMillisecon
 {
     private Seconds seconds;
     private Milliseconds milliseconds;
+    private TimeDisplay timeDisplay;
     
     public DigitalClock()
     {
         super();
         seconds = new Seconds();
         milliseconds = new Milliseconds();
+        timeDisplay = new TimeDisplay();
     }
 
     public void setTime(int hours, int minutes, int seconds, int milliseconds)
@@ -49,11 +51,13 @@ public class DigitalClock extends Clock implements ShowsSeconds, ShowsMillisecon
     
     public String displayTime()
     {
-        return super.hours.displayTime() + " " + super.minutes.displayTime() + " " + this.seconds.displayTime() + " " + this.milliseconds.displayTime();
+        // return super.hours.displayTime() + " " + super.minutes.displayTime() + " " + this.seconds.displayTime() + " " + this.milliseconds.displayTime();
+        return timeDisplay.showFourTimeUnits(super.hours, super.minutes, this.seconds, this.milliseconds);
     }
     
     public String displayIn24HourFormat()
     {
-        return super.hours.getTime() + ":" + super.minutes.getTime() + ":" + this.seconds.getTime() + ":" + this.milliseconds.getTime();
+        // return super.hours.getTime() + ":" + super.minutes.getTime() + ":" + this.seconds.getTime() + ":" + this.milliseconds.getTime();
+        return timeDisplay.displayFourTimeUnitsIn24HourFormat(super.hours, super.minutes, this.seconds, this.milliseconds);
     }
 }

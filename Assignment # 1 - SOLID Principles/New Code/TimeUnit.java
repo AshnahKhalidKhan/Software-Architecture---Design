@@ -37,18 +37,18 @@ public abstract class TimeUnit
         return (this.time + changeInTime) / this.thresholdTime;
     }
     
-    public String displayTime()
-    {
-        return this.getClass().getName() + ": " + this.time;
-    }
+    // public String displayTime()
+    // {
+    //     return this.getClass().getName() + ": " + this.time;
+    // }
     
-    public void printTime()
-    {
-        System.out.println(this.getClass().getName() + ": " + this.time);
-    }
+    // public void printTime()
+    // {
+    //     System.out.println(this.getClass().getName() + ": " + this.time);
+    // }
     
-    public void printThreshold()
-    {
-        System.out.println(this.thresholdTime);
-    }
+    // public void printThreshold()
+    // {
+    //     System.out.println(this.thresholdTime);
+    // }
 }

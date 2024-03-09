@@ -3,12 +3,14 @@ public class Timer implements TimeDevice, ShowsHours, ShowsMinutes, ShowsSeconds
     private Hours hours;
     private Minutes minutes;
     private Seconds seconds;
+    private TimeDisplay timeDisplay;
     
     public Timer()
     {
         this.hours = new Hours();
         this.minutes = new Minutes();
         this.seconds = new Seconds();
+        timeDisplay = new TimeDisplay();
     }
     
     public void setTime(int hours, int minutes, int seconds)
@@ -57,6 +59,7 @@ public class Timer implements TimeDevice, ShowsHours, ShowsMinutes, ShowsSeconds
     
     public String displayTime()
     {
-        return this.hours.displayTime() + " " + this.minutes.displayTime() + " " + this.seconds.displayTime();
+        // return this.hours.displayTime() + " " + this.minutes.displayTime() + " " + this.seconds.displayTime();
+        return timeDisplay.showThreeTimeUnits(this.hours, this.minutes, this.seconds);
     }
 }

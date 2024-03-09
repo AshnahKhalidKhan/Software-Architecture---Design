@@ -3,12 +3,14 @@ public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsM
     private Minutes minutes;
     private Seconds seconds;
     private Milliseconds milliseconds;
+    private TimeDisplay timeDisplay;
     
     public Stopwatch()
     {
         minutes = new Minutes();
         seconds = new Seconds();
         milliseconds = new Milliseconds();
+        timeDisplay = new TimeDisplay();
     }
     
     public void setTime(int minutes, int seconds, int milliseconds)
@@ -58,6 +60,7 @@ public class Stopwatch implements TimeDevice, ShowsMinutes, ShowsSeconds, ShowsM
     
     public String displayTime()
     {
-        return this.minutes.displayTime() + " " + this.seconds.displayTime() + " " + this.milliseconds.displayTime();
+        // return this.minutes.displayTime() + " " + this.seconds.displayTime() + " " + this.milliseconds.displayTime();
+        return timeDisplay.showThreeTimeUnits(this.minutes, this.seconds, this.milliseconds);
     }
 }

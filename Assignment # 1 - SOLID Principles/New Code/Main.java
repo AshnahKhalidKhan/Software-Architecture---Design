@@ -4,18 +4,18 @@ public class Main
 	{
 		Hours h = new Hours();
 		h.setTime(0);
-		h.printTime();
+		// h.printTime();
 		h.changeTimeBy(48);
-		h.printTime();
-		h.printThreshold();
+		// h.printTime();
+		// h.printThreshold();
 		System.out.println("\n");
  		//
 		Minutes m = new Minutes();
 		m.setTime(-56);
-		m.printTime();
+		// m.printTime();
 		m.changeTimeBy(56);
-		m.printTime();
-		m.printThreshold();
+		// m.printTime();
+		// m.printThreshold();
 		System.out.println("\n");
  		//
 		Stopwatch s = new Stopwatch();
