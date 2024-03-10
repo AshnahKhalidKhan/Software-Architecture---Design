@@ -1,0 +1,36 @@
+interface Thermometer {
+    float readThermometer();
+}
+interface RadioPlayer {
+    void tuneInToRandomRadio();
+}
+interface Alarm {
+    void setAlarm(Instant instant);
+}
+class AncientClock implements Alarm, RadioPlayer {
+    @Override
+    public void setAlarm(Instant instant) {
+        // set the alarm
+    }
+    @Override
+    public void tuneInToRandomRadio() {
+        // tune in to one of the stations
+    }
+}
+class ModernClock implements Alarm, Thermometer {
+    @Override
+    public void setAlarm(Instant instant) {
+        // set the alarm
+    }
+    @Override
+    public float readThermometer() {
+        return 5; // return some value
+    }
+}
+class DigitalOven {
+    public void startCooking(Alarm alarm) {
+        //...
+        alarm.setAlarm(Instant.now());
+        //...
+    }
+}
