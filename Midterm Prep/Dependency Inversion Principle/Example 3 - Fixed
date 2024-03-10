@@ -1,0 +1,48 @@
+interface UserRepository {
+   fun findUserBy(username: String): User?
+   ...
+}
+
+class ConcreteUserRepository: UserRepository {
+   override fun findUserBy(username: String): User? {
+       ...
+   }
+   ...
+}
+
+class FakeUserRepository: UserRepository{
+    override fun findUserBy(username: String): User? {
+        return User(username)
+    }
+
+}
+
+class UserService(private val userRepository: UserRepository) {
+    fun authenticateUser(username: String, password: String): Boolean {
+        // Logic to authenticate user using the DatabaseService
+        val existingUser = userRepository.findUserBy(username)
+        if(existingUser != null) {
+            // authenticate
+            ...
+        }
+   }
+   ...
+}
+
+
+class UserTest{
+    val fakeUserRepository = FakeUserRepository()
+    val userService = UserService(fakeUserRepository)
+
+    @Test
+    fun `authenticateUser returns true for existing username`(){
+        // given
+        val username = "existingUser"
+
+        // when
+        val actual = userService.authenticateUser(username)
+
+        // then
+        assertThat(actual).isTrue()
+    }
+}
