@@ -83,3 +83,40 @@
     Events managed ASYNCHRONOUSLY,
     Very scalable (just increase consumers of very popular event);
     Very complex, difficult to debug
+
+
+
+# Differences in When to Use MVC, MVP, and MVVM
+
+### No Architecture Pattern
+- Use when the screen:
+  - Holds no state or business logic.
+  - Does not communicate with the Model Layer (no server API call or database interaction).
+
+### MVC (Model View Controller)
+- Use when the screen has:
+  - One-directional flow of actions, where all interactions affect the Model, but the result does not affect the UI.
+  - Simple functionality and does not need to communicate extensively with the Model layer.
+- Testing is easier when:
+  - Actions are reflected on the UI without waiting for the result.
+  - The screen holds minimal logic.
+
+### MVP (Model View Presenter)
+- Use when the screen has:
+  - Bi-directional flow, where user interactions request something from the Model layer, and the result affects the UI.
+  - Limited UI elements affected by updates from the Model Layer.
+- Avoid using when:
+  - UI updates occur without user interactions.
+
+### MVVM (Model View ViewModel)
+- Use when the screen has:
+  - Many views that need to subscribe to a data source in the ViewModel.
+  - One-directional flow, where events come from the Model Layer and affect the UI without user interactions.
+- Considerations:
+  - Easier maintenance when dealing with multiple views affected by updates.
+  - Learning curve for frameworks like RxJava2, LiveData, Android Binding, Rx Binding.
+
+### General Considerations
+- No architecture pattern is inherently better; each has its use cases.
+- Consider the nature of the screen, the flow of actions, and the complexity of UI updates.
+- Other architecture patterns like VIPER, MVI, MVVM-C, REDUX, FLUX are also available.
