@@ -1,1 +1,15 @@
-
+const handleTypes = types => {
+    types.forEach(type=> {
+        type.handle()
+    })
+}
+class TypeA {
+    handle() {
+        console.log("Here is the logic to handle TypeA");
+    }
+}
+class TypeB {
+    handle() {
+        console.log("Here is the different logic to handle TypeB");
+    }
+}

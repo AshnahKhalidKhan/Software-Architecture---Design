@@ -1,1 +1,41 @@
+class Footballer {
+  constructor(name, age, role) {
+    this.name = name;
+    this.age = age;
+    this.role = role;
+  }
 
+  getRole() {
+    return this.role.getRole();
+  }
+}
+
+// PlayerRole class uses the getRole method
+class PlayerRole {
+  getRole() {}
+}
+
+// Sub classes for different roles extend the PlayerRole class
+class GoalkeeperRole extends PlayerRole {
+  getRole() {
+    return 'goalkeeper';
+  }
+}
+
+class DefenderRole extends PlayerRole {
+  getRole() {
+    return 'defender';
+  }
+}
+
+class MidfieldRole extends PlayerRole {
+  getRole() {
+    return 'midfielder';
+  }
+}
+
+class ForwardRole extends PlayerRole {
+  getRole() {
+    return 'forward';
+  }
+}

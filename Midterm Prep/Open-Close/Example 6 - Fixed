@@ -1,0 +1,14 @@
+interface PaymentProcessing {
+    func processPayment()
+}
+
+class CreditCardPaymentProcessor: PaymentProcessing {
+    func processPayment() {
+        // Code to process credit card payment
+    }
+}
+class PayPalPaymentProcessor: PaymentProcessing {
+    func processPayment() {
+        // Code to process PayPal payment
+    }
+}
