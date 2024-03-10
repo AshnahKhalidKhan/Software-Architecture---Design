@@ -1,0 +1,58 @@
+- Separation of concerns: layering; no coupling; no overlap; each part responsible for separate concern
+
+- Separation of concern = Repository design pattern
+
+- Asbtraction = WHAT a class does
+  Implementation = HOW a class does
+
+- Composed object's life is connected to parent's life
+  Aggregated object's life is independent of parent's life
+
+- State diagram = State design pattern
+
+- Thin-client:
+    e.g. web browsers, ATM, kiosks, 
+    application processing + data management done on server,
+    preferred where user experience needs to be fast b/c data rendered quickly,
+    cons: does not work without internet
+
+- Fat-client:
+    e.g. any app that needs to be installed,
+    only data management done on server,
+    application processing done on client,
+    preferred where user experience needs to be fast b/c data rendered quickly,
+    cons:
+        security compromised cause software can be cracked,
+        maintainability i.e. upadting is a problem cause not everyone will install
+    
+- In 3-tier, each layer is on a separate PROCESSOR. Each processor may or may not be on the same MACHINE.
+
+- 3 tier is easily scalable cause each layer can be hosted separately (completely independent).
+
+- IF SCALABILITY IS THE GOAL, CHOOSE 3-TIER.
+
+- MVC:
+    is NOT 3-tier,
+    choose when you want separation of concern,
+    choose when user interaction updates model but we do not need to show it on view,
+    (if view is being updated with change in model, we can still use MVC but it will be complex to mock data for testing),
+    main benefit is being able to do unit testing,
+    only part of the presentation layer of 3-tier architetcure,
+    makes view independent of complex logic,
+    model:
+        is everything related to management of data,
+        classes and entities where data is fetched and set
+    view:
+        shows/represents data,
+        same data may have multiple views,
+    controller:
+        one controller may have many views,
+        connects model and view,
+        has NO business logic (buiness logic is applied in Businness layer before passed to controller),
+        middleman that takes data from model and gives it to view,
+        controller sets data in view
+
+
+- MVP:
+    
+
