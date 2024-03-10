@@ -46,7 +46,7 @@
         shows/represents data,
         same data may have multiple views,
     controller:
-        one controller may have many views,
+        one controller may correspond to many views,
         connects model and view,
         has NO business logic (buiness logic is applied in Businness layer before passed to controller),
         middleman that takes data from model and gives it to view,
@@ -54,5 +54,32 @@
 
 
 - MVP:
-    
+    controller replaced with presenter,
+    choose cause view and controller were too tightly coupled in MVC,
+    here one presenter corresponds to only one view,
+    here model does not set view; here model gives data to presenter and presenter sets view,
+    presenter has reference of view,
+    cons:
+        MVP will have huge presentation layer if SRP not followed properly,
+        There will be too many presenters,
+        too much coupling between views and presenters
 
+
+- MVVM:
+    Publisher-Subscriber pattern followed,
+    1 ViewModel handles many views,
+    ViewModel has no reference of view; they are just bound together,
+    ViewModel and View are completely independent of eachother,
+    all Views become independent of eachotehr so switching between them easier too,
+    Data-binding implemented (e.g. in react); page re-rendered whenver data changed only,
+
+
+- Triggers not good practice cause shifting business logic from code to database.
+  Do proper documentation as a solution to this.
+
+- Event-driven Architetcure:
+    Events must be indepedent (DECOUPLED) of eachother
+    Relates to Publisher-Subscriber pattern
+    Events managed ASYNCHRONOUSLY,
+    Very scalable (just increase consumers of very popular event);
+    Very complex, difficult to debug
