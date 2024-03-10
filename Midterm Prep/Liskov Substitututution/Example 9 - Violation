@@ -1,0 +1,61 @@
+const userService = new UserService(new UserRepository());
+
+
+class UserService {
+    private usersRepository: UserRepository;
+
+    constructor(usersRepository: UserRepository) {
+        this.usersRepository = usersRepository;
+    }
+
+    public async create(fields: Record<string, any>) {
+        const user = await this.usersRepository.insert(fields);
+        return user;
+    }
+
+    public async get(id: number) {
+        const user = await this.usersRepository.findById(id);
+        return user;
+    }
+
+    public async update(id: number, fields: Record<string, any>) {
+        let user = await this.usersRepository.findById(id);
+        user = {...user, ...fields};
+        await user.save();
+        return user;
+    }
+
+    public async delete(id: number) {
+        await this.usersRepository.delete(id);
+    }
+}
+
+
+class RoleService {
+    private roleRepository: RoleRepository;
+
+    constructor(roleRepository: RoleRepository) {
+        this.roleRepository = roleRepository;
+    }
+
+    public async create(fields: Record<string, any>) {
+        const user = await this.roleRepository.insert(fields);
+        return user;
+    }
+
+    public async get(id: number) {
+        const user = await this.roleRepository.findById(id);
+        return user;
+    }
+
+    public async update(id: number, fields: Record<string, any>) {
+        let user = await this.roleRepository.findById(id);
+        user = {...user, ...fields};
+        await user.save();
+        return user;
+    }
+
+    public async delete(id: number) {
+        await this.roleRepository.delete(id);
+    }
+}

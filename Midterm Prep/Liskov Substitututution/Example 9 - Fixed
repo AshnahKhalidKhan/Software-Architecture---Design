@@ -1,0 +1,43 @@
+const userService = new BaseService(new UserRepository());
+
+class BaseService {
+    private repository;
+
+    constructor(repository) {
+        this.repository = repository;
+    }
+
+    public async create(fields: Record<string, any>) {
+        const user = await this.repository.insert(fields);
+        return user;
+    }
+
+    public async get(id: number) {
+        const user = await this.repository.findById(id);
+        return user;
+    }
+
+    public async update(id: number, fields: Record<string, any>) {
+        let user = await this.repository.findById(id);
+        user = {...user, ...fields};
+        await user.save();
+        return user;
+    }
+
+    public async delete(id: number) {
+        await this.repository.delete(id);
+    }
+}
+
+
+class UserService extends BaseService {
+    constructor(repository: UserRepository) {
+        this.repository = repository;
+    }
+}
+
+class RoleService extends BaseService {
+    constructor(repository: RoleRepository) {
+        this.repository = repository;
+    }
+}
