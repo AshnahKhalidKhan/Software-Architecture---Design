@@ -1,0 +1,13 @@
+class Book {
+    var title: String
+    var author: String
+    var price: Double
+    
+    func displayBookInfo() {
+        // Code for formatting and displaying book info
+    }
+    
+    func calculateDiscountedPrice() {
+        // Code for applying discounts
+    }
+}

@@ -1,0 +1,18 @@
+const handleTypes = types => {
+    types.forEach(type=> {
+        switch (type.constructor.name) {
+            case "TypeA": 
+                console.log("Here is the logic to handle TypeA");
+                break;
+            case "TypeB":
+                console.log("Here is the different logic to handle TypeB");
+                break;
+            default:
+                console.log("unknown type", type.constructor.name);
+        }
+    })
+}
+class TypeA {
+}
+class TypeB {
+}

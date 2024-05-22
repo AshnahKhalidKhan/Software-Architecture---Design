@@ -1,0 +1,12 @@
+class Logger {
+  logError(message) {
+  // Logging error messages
+  }
+
+logInfo(message) {
+  // Logging informational messages
+  }
+  sendEmailOnCriticalError() {
+  // Email sending logic for critical errors
+  }
+}

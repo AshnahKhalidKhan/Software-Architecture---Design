@@ -1,9 +1,0 @@
-class PaymentProcessor {
-    func processCreditCardPayment() {
-        // Code to process credit card payment
-    }
-    
-    func processPayPalPayment() {
-        // Code to process PayPal payment
-    }
-}

@@ -1,0 +1,19 @@
+public class Car {
+
+     public double getCabinWidth() {
+	 // return cabin width 
+     }	
+
+}
+
+public class RacingCar extends Car {
+
+     @Override
+     public double getCabinWidth() {
+         //UNIMPLEMENTED!
+     }
+     public double getCockpitWidth() {
+	 // return cockpit width 
+     }
+
+}

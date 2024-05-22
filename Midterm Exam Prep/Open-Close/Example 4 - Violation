@@ -1,0 +1,26 @@
+class Footballer {
+  constructor(name, age, role) {
+    this.name = name;
+    this.age = age;
+    this.role = role;
+  }
+
+  getFootballerRole() {
+    switch (this.role) {
+      case 'goalkeeper':
+        console.log(`The footballer, ${this.name} is a goalkeeper`);
+        break;
+      case 'defender':
+        console.log(`The footballer, ${this.name} is a defender`);
+        break;
+      case 'midfielder':
+        console.log(`The footballer, ${this.name} is a midfielder`);
+        break;
+      case 'forward':
+        console.log(`The footballer, ${this.name} plays in the forward line`);
+        break;
+      default:
+        throw new Error(`Unsupported animal type: ${this.type}`);
+    }
+  }
+}

@@ -1,4 +1,0 @@
-Dependency Inversion Principle (DIP):
-Principle: High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions.
-Violation: High-level module depends directly on low-level module, making the system rigid and hard to change.
-Correction: Introduce abstractions (interfaces) that both high-level and low-level modules depend on.

@@ -1,0 +1,47 @@
+class FileService {
+    public async upload(file: any, extension: string): Promise<string> {
+        const s3 = new AWS.S3();
+        const params = {
+            Bucket: 'my-bucket',
+            Key: `avatars/${Date.now()}.${extension}`,
+            Body: file,
+        };
+
+        const uploadResult = await s3.upload(params).promise();
+        return uploadResult.Location;
+    }
+
+    public validate(file: any, supportedFormats: string[]): boolean {
+        const fileExtension = this.getFileExtension(file);
+
+        if (supportedFormats.includes(fileExtension.toLowerCase()))
+            return true;
+
+        throw new Error("File extension not allowed!");
+    }
+
+    public getFileExtension(file: any): string {
+        const fileName = file.name || '';
+        const parts = fileName.split('.');
+        if (parts.length > 1)
+            return parts[parts.length - 1];
+        return '';
+    }
+}
+
+
+
+export const SUPPORTED_IMAGE_FORMATS = ["jpg", "png", "jpeg", "svg", "webp"];
+
+
+
+public async updateAvatar(id:number, file:any) {
+    try {
+        this.fileService.validate(file, SUPPORTED_IMAGE_FORMATS);
+        const avatarPath = await this.fileService.upload(file);
+        await this.update(id, {avatar: avatarPath});
+    } catch (error) {
+        console.error('Avatar update failed:', error);
+    }
+}
+

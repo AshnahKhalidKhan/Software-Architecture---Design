@@ -1,0 +1,13 @@
+class Button {
+  render() {
+  // Rendering button UI
+  }
+
+  handleClick() {
+  // Handling button click events
+  }
+  
+  validateInput() {
+  // Input validation logic
+  }
+}

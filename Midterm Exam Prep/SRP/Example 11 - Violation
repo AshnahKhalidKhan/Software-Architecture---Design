@@ -1,0 +1,11 @@
+class FileManager {
+  readFromFile(fileName) {
+  // File reading logic
+  }
+
+  writeToFile(fileName, content) {
+  // File writing logic
+  }
+  manipulateFileContent() {
+  // Content manipulation logic
+  }

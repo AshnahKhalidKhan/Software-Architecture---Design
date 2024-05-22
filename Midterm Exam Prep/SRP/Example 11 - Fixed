@@ -1,0 +1,17 @@
+class FileReader {
+  readFromFile(fileName) {
+  // File reading logic
+  }
+}
+
+class FileWriter {
+  writeToFile(fileName, content) {
+  // File writing logic
+  }
+}
+
+class ContentManipulator {
+  manipulate(content) {
+  // Content manipulation logic
+  }
+}

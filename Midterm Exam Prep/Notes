@@ -1,0 +1,146 @@
+- Separation of concerns: layering; no coupling; no overlap; each part responsible for separate concern
+
+- Separation of concern = Repository design pattern
+
+- Asbtraction = WHAT a class does
+  Implementation = HOW a class does
+
+- Use case diagram: behaviour of system as seen by user; complete description of functionality of system & environment
+  Actors:
+    roles/user types;
+    external entity communicating with system;
+    has unique name and optional description
+  Use cases:
+    sequence of interaction for a type of functionality;
+    class of functionality provided by the system as an event flow;
+    consists of unique name, actors, entry/exit conditions, flow of events, special requirenemts
+  <<extends>> relationships:
+    exceptional/seldom invoked cases
+    use cases representing xceptional flows can extend more than one use case.
+    Arrow pointed toward the extended use case.
+  <<includes>> relationship:
+    Arrow pointed toward the use case.
+
+- Class diagrams: static structure of system (objects, attributes, associations)
+- Sequence diagrams:
+  dynamic behaviour between actors, objects and the system;
+  represent behaviour as interactions;
+
+- State diagrams: dynamic behaviour of individual object (essentially a finite state automaton)
+- State diagram = State design pattern
+
+- Activity diagrams: workflow/flowchart of the modeling of the dynamic behaviour of system
+
+- Composed object's life is connected to parent's life
+  Aggregated object's life is independent of parent's life
+
+- Thin-client:
+    e.g. web browsers, ATM, kiosks, 
+    application processing + data management done on server,
+    preferred where user experience needs to be fast b/c data rendered quickly,
+    cons: does not work without internet
+
+- Fat-client:
+    e.g. any app that needs to be installed,
+    only data management done on server,
+    application processing done on client,
+    preferred where user experience needs to be fast b/c data rendered quickly,
+    cons:
+        security compromised cause software can be cracked,
+        maintainability i.e. upadting is a problem cause not everyone will install
+    
+- In 3-tier, each layer is on a separate PROCESSOR. Each processor may or may not be on the same MACHINE.
+
+- 3 tier is easily scalable cause each layer can be hosted separately (completely independent).
+
+- IF SCALABILITY IS THE GOAL, CHOOSE 3-TIER.
+
+- MVC:
+    is NOT 3-tier,
+    choose when you want separation of concern,
+    choose when user interaction updates model but we do not need to show it on view,
+    (if view is being updated with change in model, we can still use MVC but it will be complex to mock data for testing),
+    main benefit is being able to do unit testing,
+    only part of the presentation layer of 3-tier architetcure,
+    makes view independent of complex logic,
+    model:
+        is everything related to management of data,
+        classes and entities where data is fetched and set
+    view:
+        shows/represents data,
+        same data may have multiple views,
+    controller:
+        one controller may correspond to many views,
+        connects model and view,
+        has NO business logic (buiness logic is applied in Businness layer before passed to controller),
+        middleman that takes data from model and gives it to view,
+        controller sets data in view
+
+
+- MVP:
+    controller replaced with presenter,
+    choose cause view and controller were too tightly coupled in MVC,
+    here one presenter corresponds to only one view,
+    here model does not set view; here model gives data to presenter and presenter sets view,
+    presenter has reference of view,
+    cons:
+        MVP will have huge presentation layer if SRP not followed properly,
+        There will be too many presenters,
+        too much coupling between views and presenters
+
+
+- MVVM:
+    Publisher-Subscriber pattern followed,
+    1 ViewModel handles many views,
+    ViewModel has no reference of view; they are just bound together,
+    ViewModel and View are completely independent of eachother,
+    all Views become independent of eachotehr so switching between them easier too,
+    Data-binding implemented (e.g. in react); page re-rendered whenver data changed only,
+
+
+- Triggers not good practice cause shifting business logic from code to database.
+  Do proper documentation as a solution to this.
+
+- Event-driven Architetcure:
+    Events must be indepedent (DECOUPLED) of eachother
+    Relates to Publisher-Subscriber pattern
+    Events managed ASYNCHRONOUSLY,
+    Very scalable (just increase consumers of very popular event);
+    Very complex, difficult to debug
+
+
+
+# Differences in When to Use MVC, MVP, and MVVM
+
+### No Architecture Pattern
+- Use when the screen:
+  - Holds no state or business logic.
+  - Does not communicate with the Model Layer (no server API call or database interaction).
+
+### MVC (Model View Controller)
+- Use when the screen has:
+  - One-directional flow of actions, where all interactions affect the Model, but the result does not affect the UI.
+  - Simple functionality and does not need to communicate extensively with the Model layer.
+- Testing is easier when:
+  - Actions are reflected on the UI without waiting for the result.
+  - The screen holds minimal logic.
+
+### MVP (Model View Presenter)
+- Use when the screen has:
+  - Bi-directional flow, where user interactions request something from the Model layer, and the result affects the UI.
+  - Limited UI elements affected by updates from the Model Layer.
+- Avoid using when:
+  - UI updates occur without user interactions.
+
+### MVVM (Model View ViewModel)
+- Use when the screen has:
+  - Many views that need to subscribe to a data source in the ViewModel.
+  - One-directional flow, where events come from the Model Layer and affect the UI without user interactions.
+- Considerations:
+  - Easier maintenance when dealing with multiple views affected by updates.
+  - Learning curve for frameworks like RxJava2, LiveData, Android Binding, Rx Binding.
+
+### General Considerations
+- No architecture pattern is inherently better; each has its use cases.
+- Consider the nature of the screen, the flow of actions, and the complexity of UI updates.
+- Other architecture patterns like VIPER, MVI, MVVM-C, REDUX, FLUX are also available.

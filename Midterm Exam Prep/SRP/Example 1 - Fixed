@@ -1,0 +1,22 @@
+public class GameResult {
+
+    int guesses;
+    int magicNumber;
+  
+    GameResult( int numberOfGuesses, int theNumber) {
+      guesses = numberOfGuesses;
+      magicNumber = theNumber;
+    }
+  
+  }
+
+public class GameHistory {
+ 
+  private static List<GameResult> history = new ArrayList();
+ 
+  public static void printHistory(){ /* lots of code */ }
+  public static void updateRow()   { /* lots of code */ }
+  public static void deleteRow()   { /* lots of code */ }
+  public static void editRow()     { /* lots of code */ }
+ 
+}

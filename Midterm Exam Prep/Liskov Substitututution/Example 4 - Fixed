@@ -1,0 +1,33 @@
+public class Vehicle {
+	
+     public double getInteriorWidth() {
+	// return interior width 
+     }
+
+}
+
+public class Car extends Vehicle {
+		
+     @Override
+     public double getInteriorWidth() {
+	 return this.getCabinWidth();
+     }
+
+     public double getCabinWidth() {
+	// return cabin width
+     }
+		
+}
+
+public class RacingCar extends Vehicle {
+
+     @Override
+     public double getCabinWidth() {
+	  return this.getCockpitWidth();
+     }
+
+     public double getCockpitWidth() {
+	 // return cockpit width 
+     }
+
+}
